@@ -1,10 +1,3 @@
-import { User } from "./models/User";
-import { Company } from "./models/Company";
+import { Map } from "./components/Map";
 
-const user = new User();
-
-console.log(user);
-
-const company = new Company();
-
-console.log(company);
+new Map("map-container");
