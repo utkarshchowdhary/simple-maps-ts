@@ -32,7 +32,7 @@ export class Map {
     new mapboxgl.Marker()
       .setLngLat(mappable.location)
       .setPopup(
-        new mapboxgl.Popup({ offset: 30 }).setHTML(mappable.displayContent())
+        new mapboxgl.Popup({ offset: 30 }).setText(mappable.displayContent())
       )
       .addTo(this.map);
   }
