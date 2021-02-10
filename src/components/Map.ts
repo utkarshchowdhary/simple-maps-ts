@@ -2,7 +2,7 @@ import mapboxgl from "mapbox-gl";
 
 mapboxgl.accessToken = <string>process.env.MAPBOX_ACCESS_TOKEN;
 
-interface Mappable {
+export interface Mappable {
   location: {
     lat: number;
     lng: number;
