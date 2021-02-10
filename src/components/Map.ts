@@ -12,14 +12,14 @@ export interface Mappable {
 
 export class Map {
   private map: mapboxgl.Map;
+  private bounds: mapboxgl.LngLatBounds;
 
   constructor(className: string) {
     this.map = new mapboxgl.Map({
       container: <HTMLElement>document.querySelector(`.${className}`),
       style: "mapbox://styles/mapbox/streets-v11",
-      center: { lng: 0, lat: 0 },
-      zoom: 1,
     });
+    this.bounds = new mapboxgl.LngLatBounds();
 
     this.config();
   }
@@ -35,5 +35,16 @@ export class Map {
         new mapboxgl.Popup({ offset: 30 }).setText(mappable.displayContent())
       )
       .addTo(this.map);
+
+    this.bounds.extend([mappable.location.lng, mappable.location.lat]);
+
+    this.map.fitBounds(this.bounds, {
+      padding: {
+        top: 200,
+        bottom: 150,
+        left: 100,
+        right: 100,
+      },
+    });
   }
 }
