@@ -19,8 +19,10 @@ export class Company {
 
   displayContent(): string {
     return `
-    Company Name: ${this.companyName}
-    Catch Phrase: ${this.catchPhrase}
+    <div>
+      <h2>Company Name: ${this.companyName}</h2>
+      <h4>Catch Phrase: ${this.catchPhrase}<h4>
+    </div>
     `;
   }
 }

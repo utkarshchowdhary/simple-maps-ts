@@ -16,6 +16,6 @@ export class User {
   }
 
   displayContent(): string {
-    return `User Name: ${this.name}`;
+    return `<h4>User Name: ${this.name}</h4>`;
   }
 }
